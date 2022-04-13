@@ -21,15 +21,15 @@ class Header extends Component {
                     </div>
                     <Nav>
                         <NavItem>
-                            <a href={sign_in_route} id="signin" className="nav-link">Sign In</a>
+                            <a href={sign_in_route} className="nav-link">Sign In</a>
                         </NavItem>
 
                         <NavItem>
-                            <a href={new_user_route} id="signup" className="nav-link">Sign Up</a>
+                            <a href={new_user_route} className="nav-link">Sign Up</a>
                         </NavItem>
 
                         <NavItem>
-                            <a href={sign_out_route} id="signout" className="nav-link">Sign Out</a>
+                            <a href={sign_out_route} className="nav-link">Sign Out</a>
                         </NavItem>
                     </Nav>
                 </div>
