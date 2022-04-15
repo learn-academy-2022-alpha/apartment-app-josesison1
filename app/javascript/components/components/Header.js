@@ -20,17 +20,21 @@ class Header extends Component {
                         <p>Find your peace in San Diego. Inspired by the rustic charm of Tuscany and the coastal vibe of the fishing village that shares its name, this apartment community takes you on a journey across the ocean to a picturesque Italian paradise. Vivi la dolce vita surrounded by towering palms, cobblestone accents, and trickling fountains at Magic City.</p>
                     </div>
                     <Nav>
-                        <NavItem>
-                            <a href={sign_in_route} className="nav-link">Sign In</a>
-                        </NavItem>
-
-                        <NavItem>
-                            <a href={new_user_route} className="nav-link">Sign Up</a>
-                        </NavItem>
-
-                        <NavItem>
-                            <a href={sign_out_route} className="nav-link">Sign Out</a>
-                        </NavItem>
+                        {!logged_in &&
+                            <NavItem>
+                                <a href={sign_in_route} class="nav-link">Sign In</a>
+                            </NavItem>
+                        }
+                        {!logged_in &&
+                            <NavItem>
+                                <a href={new_user_route} class="nav-link">Sign Up</a>
+                            </NavItem>
+                        }
+                        {logged_in &&
+                            <NavItem>
+                                <a href={sign_out_route} class="nav-link">Sign Out</a>
+                            </NavItem>
+                        }
                     </Nav>
                 </div>
             </>
