@@ -10,6 +10,25 @@ import {
 } from 'react-router-dom'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      apartments: []
+    }
+  }
+
+  componentDidMount() {
+    this.readApt()
+  }
+
+  readApt = () => {
+    fetch("http://localhost:3000/apartments")
+      .then(response => response.json())
+      .then(aptArray => this.setState({ apartments: aptArray }))
+      .catch(errors => console.log("Apartment read errors:", errors))
+
+  }
+
   render() {
     return (
       <>
@@ -18,7 +37,7 @@ class App extends Component {
           <Navigation />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/Apartments" component={Apartments} />
+            <Route path="/Apartments" render={(props) => <Apartments apartments={this.state.apartments} />} />
           </Switch>
         </Router>
       </>
